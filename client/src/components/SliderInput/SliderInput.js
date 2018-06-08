@@ -13,9 +13,13 @@ export default class SliderInput extends Component {
 	}
 
 	handleChange(e) {
-		const value = e.target.value
-		this.setState({value})
-	}
+		const value = e.target.value;
+    this.setState({value});
+  }
+  
+  handleMouseUp(e) {
+    this.props.onChange(Number(this.state.value));
+  }
 
 	render() {
 		const { value } = this.state
@@ -28,12 +32,18 @@ export default class SliderInput extends Component {
 					min={0}
 					max={10}
 					step={0.25}
-					onChange={this.handleChange.bind(this)}/>
+					onChange={this.handleChange.bind(this)}
+          onMouseUp={this.handleMouseUp.bind(this)} />
 			</div>
 		)
 	}
 }
 
 SliderInput.propTypes = {
-	defaultValue: PropTypes.number
-}
+  defaultValue: PropTypes.number,
+  onChange: PropTypes.func,
+};
+
+SliderInput.defaultProps = {
+  onChange: () => {},
+};

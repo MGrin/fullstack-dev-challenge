@@ -1,0 +1,28 @@
+.input {
+	width: 100%;
+	margin: auto;
+	font-weight: 800;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.input input {
+	padding: 9px;
+	font-size: 15px;
+	display: inline-block;
+	border: 2px solid #AAB8C8;
+	border-radius: 8px;
+	text-align: center;
+	letter-spacing: 1px;
+	max-width: 190px;
+	width: 100%;
+}
+
+.input :focus {
+	outline: none;
+	border: 2px solid #00b2ff;
+}
+
+.input .default-value input {
+	color: #00b2ff;
+}

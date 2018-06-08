@@ -55,10 +55,11 @@ export default class DisplayGraph extends Component {
   		}, baseProps)
 		};
 
+    
 		return (
 			<div>
 				<VictoryChart animate={{duration: 100}} theme={theme}>
-					<VictoryLine {...{data}} y="amount"/>
+					<VictoryLine data={data} y="amount"/>
 				</VictoryChart>
 			</div>
 		);
